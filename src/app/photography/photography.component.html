@@ -1,8 +1,23 @@
 <body>
-  <div *ngFor="let item of PHOTOITEMS" class="center">
-    <img src="assets/img.png"/>
-    <h1> {{item.typeOfShot}} </h1>
-    <h2> {{item.price}} </h2>
-    <h3> {{item.description}} </h3>
-  </div>
+<mat-card *ngFor="let item of PHOTOITEMS" class="example-card">
+
+  <mat-card-header>
+    <mat-card-title>{{item.typeOfShot}}</mat-card-title>
+    <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]=item.imagePath alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+    <p>
+      {{item.description}}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+
+</mat-card>
 </body>
